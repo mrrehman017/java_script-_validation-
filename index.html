@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" /> 
+
+
+    <link rel="stylesheet" href="style sheet/bootstrap.css">
+    <link rel="stylesheet" href="form.js">
+    <link rel="stylesheet" href="style sheet/style.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="mbdy d-flex align-items-center mt-3 text-center flex-column">
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                <label for="fileToUpload">
+                                    <div class="profile-pic" style="background-image: url(img/wps5.png)">
+                                        <span class="cfcm"> 
+                                            <i class="fas fa-camera"></i>
+                                        </span>
+                                        <span class="cftf">Change Image</span>
+                                    </div>
+                                </label>
+                                <input type="File" name="fileToUpload" id="fileToUpload">
+                            </form>
+                            <div class="content mt-3">
+                                <h4 class="u-name">John Doe</h4>
+                                <p class="cnt-h text-muted mb-1">Full Stack Developer</p>
+                                <p class="cnt-d text-secondary">Bay Area, San Francisco, CA</p>
+                                <button class="btn btn-primary">Follow</button>
+                                <button class="btn btn-outline-primary">Message</button>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <ul class="list-group list-group-flush mb-1">
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><i class="fas fa-globe text-dark"></i>Website</h6>
+                                <span class="text-secondary">https://bootdey.com</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><i class="fab fa-github
+                                    text-dark"></i>Github</h6>
+                                <span class="text-secondary">bootdey</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><i class="fab fa-twitter text-primary"></i>Twitter</h6>
+                                <span class="text-secondary">@bootdey</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><i class="fab fa-instagram text-danger"></i>Instagram</h6>
+                                <span class="text-secondary">bootdey</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><i class="fab fa-facebook-f text-primary"></i>Facebook</h6>
+                                <span class="text-secondary">bootdey</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <form name="myform" class="form-control py-4" >  
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="first_name" class="d-flex align-items-center"
+                                    style="font-weight: 600;">Fisrt Name :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="text" name="name" id="first_name" placeholder="First Name" class="form-control" >
+                            </div>
+                            <span id="demo bg-danger"></span>
+                            <div class="col-3">
+                                <label for="" class="d-flex align-items-center" style="font-weight: 600;">Last
+                                    Name :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="text" name="name" class="form-control" placeholder="Last Name" id="last_name" >
+                            </div>
+
+                            <div class="col-3">
+                                <label for="" class="d-flex align-items-center" style="font-weight: 600;">Email :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="Email" class="form-control" placeholder="Enter Email" id="email" >
+                            </div>
+
+                            <div class="col-3">
+                                <label for="" class="d-flex align-items-center"
+                                    style="font-weight: 600;">Password :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="password" class="form-control" placeholder="Enter Password" id="password" >
+                            </div>
+
+                            <div class="col-3">
+                                <label for="" class="d-flex align-items-center" style="font-weight: 600;">Confrim
+                                    Password :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="password" class="form-control" id="confrim_pass" placeholder="Enter Confrim Password">
+                            </div>
+
+                            <div class="col-3">
+                                <label for="" class="d-flex align-items-center" style="font-weight: 600;">Phone
+                                    Number :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="tel" class="form-control" placeholder="+92 300 0000000" id="phoneN" >
+                            </div>
+
+                            <div class="col-3">
+                                <label for="" class="d-flex align-items-center"
+                                    style="font-weight: 600;">Address :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="text" class="form-control" placeholder="Bay Area, San Francisco, CA" >
+                            </div>
+
+                            <div class="col-3">
+                                <label for="" class="d-flex" style="font-weight: 600;">Gender :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="radio" name="gender" id="male" value="male">
+                                <label for="male">Male</label>
+                                <br>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+
+                            <div class="col-3">
+                                <label for="" class="d-flex" style="font-weight: 600;">Field of Interests :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <input type="checkbox" id="Cricket">
+                                <label for="Cricket">Cricket</label>
+                                <br>
+                                <input type="checkbox" id="Badminton">
+                                <label for="Badminton">Badminton</label>
+                                <br>
+                                <input type="checkbox" id="Hocky">
+                                <label for="Hocky">Hocky</label>
+                                <br>
+                                <input type="checkbox" id="Snooker">
+                                <label for="Snooker">Snooker</label>
+                                <br>
+                                <input type="checkbox" id="Swimming">
+                                <label for="Swimming">Swimming</label>
+                                <br>
+                            </div>
+
+                            <div class="col-3">
+                                <label for="" style="font-weight: 600;">Message :</label>
+                            </div>
+                            <div class="col-9 mb-3">
+                                <textarea name="" id="" cols="30" rows="3" class="form-control"
+                                    placeholder="Write a Message..." ></textarea>
+                            </div> 
+                        </div>
+                        <button value="register" type="submit"
+                            class="btn-s btn-primary form-control">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"> 
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body> 
+</html>
