@@ -10,7 +10,6 @@
 
 
     <link rel="stylesheet" href="style sheet/bootstrap.css">
-    <link rel="stylesheet" href="form.js">
     <link rel="stylesheet" href="style sheet/style.css">
 </head>
 
@@ -67,29 +66,29 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <form name="myform" class="form-control py-4" >  
+                    <form name="myform" class="form-control py-4" method="post" id="profile-form" >  
                         <div class="row">
                             <div class="col-3">
                                 <label for="first_name" class="d-flex align-items-center"
                                     style="font-weight: 600;">Fisrt Name :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="text" name="name" id="first_name" placeholder="First Name" class="form-control" >
+                                <input type="text" name="fname" id="first_name" placeholder="First Name" class="form-control" >
                             </div>
-                            <span id="demo bg-danger"></span>
+                            <span id="demo" class="bg-danger"></span>
                             <div class="col-3">
                                 <label for="" class="d-flex align-items-center" style="font-weight: 600;">Last
                                     Name :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="text" name="name" class="form-control" placeholder="Last Name" id="last_name" >
+                                <input type="text" name="lname" class="form-control" placeholder="Last Name" id="last_name" >
                             </div>
 
                             <div class="col-3">
                                 <label for="" class="d-flex align-items-center" style="font-weight: 600;">Email :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="Email" class="form-control" placeholder="Enter Email" id="email" >
+                                <input type="email" name="email" class="form-control" placeholder="Enter Email" id="email" >
                             </div>
 
                             <div class="col-3">
@@ -97,7 +96,7 @@
                                     style="font-weight: 600;">Password :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="password" class="form-control" placeholder="Enter Password" id="password" >
+                                <input type="password" name="password" class="form-control" placeholder="Enter Password" id="password">
                             </div>
 
                             <div class="col-3">
@@ -128,7 +127,7 @@
                                 <label for="" class="d-flex" style="font-weight: 600;">Gender :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="radio" name="gender" id="male" value="male">
+                                <input type="radio" name="gender" id="male" value="male" checked="checked">
                                 <label for="male">Male</label>
                                 <br>
                                 <input type="radio" id="female" name="gender" value="female">
@@ -157,10 +156,11 @@
                             </div>
 
                             <div class="col-3">
-                                <label for="" style="font-weight: 600;">Message :</label>
+                                <label for="" style="font-weight: 600;">Message (<span id="remaining">0</span>/100)
+                                </label>
                             </div>
                             <div class="col-9 mb-3">
-                                <textarea name="" id="" cols="30" rows="3" class="form-control"
+                                <textarea name="" id="aboutme" cols="30" rows="3" class="form-control"
                                     placeholder="Write a Message..." ></textarea>
                             </div> 
                         </div>
@@ -171,8 +171,42 @@
             </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"> 
-    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script type="text/javascript" src="form.js"></script>
+    <script>
+        // $("#profile-form").validate();
+
+        // keyDown
+        // keyUp
+        // onClick
+        // onFocus
+        // onChange
+        // onTarget
+
+        $('#aboutme').on('keyup', function() {
+            let total_characters = this.value.length;
+            
+            // if(total_characters >= 100) {
+            //     return false;
+            // }
+
+            $('#remaining').html(total_characters);
+        });
+
+        $('#last_name').on('keyup', function() {
+            
+            console.log(this.value);
+        });
+
+        $('#profile-form').on('submit', function(event) {
+
+            event.preventDefault();
+
+
+            validateform();
+        });
+    </script>
 </body> 
 </html>
