@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" /> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
 
     <link rel="stylesheet" href="style sheet/bootstrap.css">
@@ -23,7 +23,7 @@
                             <form action="upload.php" method="post" enctype="multipart/form-data">
                                 <label for="fileToUpload">
                                     <div class="profile-pic" style="background-image: url(img/wps5.png)">
-                                        <span class="cfcm"> 
+                                        <span class="cfcm">
                                             <i class="fas fa-camera"></i>
                                         </span>
                                         <span class="cftf">Change Image</span>
@@ -66,61 +66,75 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <form name="myform" class="form-control py-4" method="post" id="profile-form" >  
+                    <form name="myform" class="form-control py-4" id="profile-form">
                         <div class="row">
                             <div class="col-3">
                                 <label for="first_name" class="d-flex align-items-center"
                                     style="font-weight: 600;">Fisrt Name :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="text" name="fname" id="first_name" placeholder="First Name" class="form-control" >
+                                <input type="text" name="first_name" id="first_name" placeholder="First Name" required
+                                    class="form-control">
+                                <span id="fName" class="text-danger"></span>
                             </div>
-                            <span id="demo" class="bg-danger"></span>
                             <div class="col-3">
-                                <label for="" class="d-flex align-items-center" style="font-weight: 600;">Last
+                                <label for="last_name" class="d-flexa lign-items-center" style="font-weight: 600;">Last
                                     Name :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="text" name="lname" class="form-control" placeholder="Last Name" id="last_name" >
+                                <input type="text" name="last_name" id="last_name" placeholder="Last Name" required
+                                    class="form-control">
+                                <span id="lName" class="text-danger"></span>
                             </div>
 
                             <div class="col-3">
-                                <label for="" class="d-flex align-items-center" style="font-weight: 600;">Email :</label>
+                                <label for="email" class="d-flex align-items-center" style="font-weight: 600;">Email
+                                    :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="email" name="email" class="form-control" placeholder="Enter Email" id="email" >
+                                <input type="email" name="email" class="form-control" placeholder="Enter Email" required
+                                    pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" id="email">
                             </div>
 
                             <div class="col-3">
-                                <label for="" class="d-flex align-items-center"
-                                    style="font-weight: 600;">Password :</label>
+                                <label for="password" class="d-flex align-items-center"
+                                    style="font-weight: 600;">Password
+                                    :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="password" name="password" class="form-control" placeholder="Enter Password" id="password">
+                                <input type="password" name="password" class="form-control" placeholder="Enter Password"
+                                    required id="password">
+                                <span id="pass" class="text-danger"></span>
                             </div>
 
                             <div class="col-3">
-                                <label for="" class="d-flex align-items-center" style="font-weight: 600;">Confrim
+                                <label for="confrim_pass" class="d-flex align-items-center"
+                                    style="font-weight: 600;">Confrim
                                     Password :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="password" class="form-control" id="confrim_pass" placeholder="Enter Confrim Password">
+                                <input type="confrim_pass" class="form-control" id="confrim_pass" name="confrim_pass"
+                                    required placeholder="Enter Confrim Password">
                             </div>
 
                             <div class="col-3">
-                                <label for="" class="d-flex align-items-center" style="font-weight: 600;">Phone
-                                    Number :</label>
+                                <label for="phoneN" class="d-flex align-items-center" style="font-weight: 600;">Phone
+                                    Number
+                                    :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="tel" class="form-control" placeholder="+92 300 0000000" id="phoneN" >
+                                <input type="tel" class="form-control" placeholder="+92 300 0000000" name="phoneN"
+                                    id="phoneN" required>
                             </div>
 
                             <div class="col-3">
-                                <label for="" class="d-flex align-items-center"
-                                    style="font-weight: 600;">Address :</label>
+                                <label for="home_add" class="d-flex align-items-center"
+                                    style="font-weight: 600;">Address
+                                    :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="text" class="form-control" placeholder="Bay Area, San Francisco, CA" >
+                                <input type="text" name="home_add" id="home_add" class="form-control"
+                                    placeholder="Bay Area, San Francisco, CA" required>
                             </div>
 
                             <div class="col-3">
@@ -135,37 +149,38 @@
                             </div>
 
                             <div class="col-3">
-                                <label for="" class="d-flex" style="font-weight: 600;">Field of Interests :</label>
+                                <label for="checkbox" class="d-flex" style="font-weight: 600;">Field of Interests
+                                    :</label>
                             </div>
                             <div class="col-9 mb-3">
-                                <input type="checkbox" id="Cricket">
+                                <input type="checkbox" class="checkbox" name="checkbox" id="Cricket">
                                 <label for="Cricket">Cricket</label>
                                 <br>
-                                <input type="checkbox" id="Badminton">
+                                <input type="checkbox" class="checkbox" name="checkbox" id="Badminton">
                                 <label for="Badminton">Badminton</label>
                                 <br>
-                                <input type="checkbox" id="Hocky">
+                                <input type="checkbox" class="checkbox" name="checkbox" id="Hocky">
                                 <label for="Hocky">Hocky</label>
                                 <br>
-                                <input type="checkbox" id="Snooker">
+                                <input type="checkbox" class="checkbox" name="checkbox" id="Snooker">
                                 <label for="Snooker">Snooker</label>
                                 <br>
-                                <input type="checkbox" id="Swimming">
+                                <input type="checkbox" class="checkbox" name="checkbox" id="Swimming">
                                 <label for="Swimming">Swimming</label>
                                 <br>
                             </div>
 
                             <div class="col-3">
-                                <label for="" style="font-weight: 600;">Message (<span id="remaining">0</span>/100)
+                                <label for="aboutme" style="font-weight: 600;">Message (<span
+                                        id="remaining">0</span>/100)
                                 </label>
                             </div>
                             <div class="col-9 mb-3">
-                                <textarea name="" id="aboutme" cols="30" rows="3" class="form-control"
-                                    placeholder="Write a Message..." ></textarea>
-                            </div> 
+                                <textarea name="aboutme" id="aboutme" cols="30" rows="3" class="form-control"
+                                    placeholder="Write a Message..." required></textarea>
+                            </div>
                         </div>
-                        <button value="register" type="submit"
-                            class="btn-s btn-primary form-control">Submit</button>
+                        <button value="register" type="submit" class="btn-s btn-primary form-control">Submit</button>
                     </form>
                 </div>
             </div>
@@ -175,38 +190,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
     <script type="text/javascript" src="form.js"></script>
+
+
+
     <script>
         // $("#profile-form").validate();
+        // errorClass: 'errors',
+        // $('#profile-form').on('submit', function (event) {
+        //     event.preventDefault();
+        //     validateform();
 
-        // keyDown
-        // keyUp
-        // onClick
-        // onFocus
-        // onChange
-        // onTarget
-
+        // });  
         $('#aboutme').on('keyup', function() {
             let total_characters = this.value.length;
             
-            // if(total_characters >= 100) {
-            //     return false;
-            // }
-
+            if(total_characters >= 100) {
+                return false;
+            }
             $('#remaining').html(total_characters);
-        });
-
-        $('#last_name').on('keyup', function() {
-            
-            console.log(this.value);
-        });
-
-        $('#profile-form').on('submit', function(event) {
-
-            event.preventDefault();
-
-
-            validateform();
-        });
+        }); 
+         
     </script>
-</body> 
+</body>
+
 </html>

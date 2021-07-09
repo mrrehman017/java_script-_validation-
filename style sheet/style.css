@@ -53,3 +53,9 @@ form input[type="file"] {
           display: none;
           cursor: pointer;
  } 
+ .error{
+     color: red;
+     margin-top: 3px;
+     font-weight: 700px;
+     font-size: 14px;
+ } 
