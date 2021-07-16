@@ -8,7 +8,7 @@
     <title>Form</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
-
+    <link rel="stylesheet" href="style sheet/bootstrap-tagsinput.css">
     <link rel="stylesheet" href="style sheet/bootstrap.css">
     <link rel="stylesheet" href="style sheet/style.css">
 </head>
@@ -20,17 +20,30 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="mbdy d-flex align-items-center mt-3 text-center flex-column">
-                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
                                 <label for="fileToUpload">
-                                    <div class="profile-pic" style="background-image: url(img/wps5.png)">
+                                    <div class="profile_pic" id="output">
                                         <span class="cfcm">
                                             <i class="fas fa-camera"></i>
                                         </span>
                                         <span class="cftf">Change Image</span>
                                     </div>
                                 </label>
-                                <input type="File" name="fileToUpload" id="fileToUpload">
-                            </form>
+                                <input type="File" name="fileToUpload" id="fileToUpload" accept="image/*"
+                                    onchange="loadFile(event)">
+
+                                <img id="output"/>
+                            </form> -->
+
+                            <div class="profile_pic">
+                                <input type="file" id="file" accept="image/*" onchange="loadFile(event)">
+                                <img src="img/wps5.png" alt="" id="pic">
+                                <label for="file" id="uploadBtn">
+                                    <p class="mb-0">Upload</p>
+                                    <i class="fas fa-camera"></i>
+                                </label>
+                            </div>
+
                             <div class="content mt-3">
                                 <h4 class="u-name">John Doe</h4>
                                 <p class="cnt-h text-muted mb-1">Full Stack Developer</p>
@@ -147,7 +160,6 @@
                                 <input type="radio" id="female" name="gender" value="female">
                                 <label for="female">Female</label>
                             </div>
-
                             <div class="col-3">
                                 <label for="checkbox" class="d-flex" style="font-weight: 600;">Field of Interests
                                     :</label>
@@ -169,7 +181,6 @@
                                 <label for="Swimming">Swimming</label>
                                 <br>
                             </div>
-
                             <div class="col-3">
                                 <label for="aboutme" style="font-weight: 600;">Message (<span
                                         id="remaining">0</span>/100)
@@ -187,11 +198,16 @@
         </div>
     </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
-    <script type="text/javascript" src="form.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js">
+    </script>
 
+    <script type="text/javascript" src="script/bootstrap-tagsinput.js">
+    </script>
+
+    <script type="text/javascript" src="script/form.js"></script>
 
     <script>
         // $("#profile-form").validate();
@@ -201,16 +217,14 @@
         //     validateform();
 
         // });  
-        $('#aboutme').on('keyup', function() {
+        $('#aboutme').on('keyup', function () {
             let total_characters = this.value.length;
-            
-            if(total_characters >= 100) {
+
+            if (total_characters >= 100) {
                 return false;
             }
             $('#remaining').html(total_characters);
-        }); 
-         
+        });
     </script>
-</body>
-
+</body> 
 </html>

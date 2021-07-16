@@ -59,4 +59,48 @@ $("#profile-form").validate({
 			maxlength: "Only 100 characters allow",
 		},
 	}
-});  
+});
+var loadFile = function (event) {
+	var pic = document.getElementById('pic');
+	pic.src = URL.createObjectURL(event.target.files[0]);
+	pic.onload = function () {
+		URL.revokeObjectURL(pic.src) // free memory
+	}
+};
+
+// Declearing html elements
+
+const imgDiv = document.querySelector('.profile_pic');
+// const img = document.querySelector('#pic');
+// const file = document.querySelector('#file');
+// const uploadBtn = document.querySelector('#uploadBtn');
+
+//if user hover on img div
+
+imgDiv.addEventListener('mouseenter', function () {
+	uploadBtn.style.display = "block"
+});
+
+//if we hover out from img div
+
+imgDiv.addEventListener('mouseleave', function () {
+	uploadBtn.style.display = "none"
+});
+
+// // when we choose pic to upload
+
+// file.addEventListener('change', function(){
+// 	//this refer to file
+// 	const choosedFile = this.file[0];
+
+// 	if(choosedFile){
+
+// 		const reader = new FileReader();
+// 		// File reader is a predefined function of JS
+// 		reader.addEventListener('load', function(){
+// 			img.setAttribute('src', reader.result);
+// 		});
+
+// 		reader.readAsDataURL(choosedFile);
+// 	}
+// }); 
